@@ -1,0 +1,6 @@
+{% extends 'core_site/parent.html' %}
+
+<!-- This {{ block.super }} uses parent title as well as its own title -->
+{% block title %}{{ block.super }}Home{% endblock %}
+
+{% block content %} <h2>I am New Home Page</h2>{% endblock %}  

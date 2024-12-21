@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Default value is Other -->
+  <title>{% block title %}Other{% endblock %}</title>
+
+  <!-- This link tag is used to use css -->
+  <!-- <link rel="stylesheet" href="{% static 'core_site/css/core.css' %}"> -->
+
+  <link rel="stylesheet" href="{% static 'core_site/css/all.min.css' %}">
+
+<!-- This is used to use bootstrap css in our django project -->
+  <link rel="stylesheet" href="{% static 'core_site/css/bootstrap.min.css' %}">
+
+  <!-- different application can use its own css with different location. We just need to specify the path -->
+  {% block corecss %}  <link rel="stylesheet" href="{% static 'core_site/css/core.css' %}"> {% endblock %}
+
+</head>
+<body>
+  <nav>
+    <ul>
+      <!-- <li>Home</li>
+      <li>About</li>
+      <li>Django Course</li> -->
+
+      <!-- First Method -->
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+
+      <li><a href="/cor/django">Django Course</a></li>
+      <!-- Or -->
+      <li><a href="{% url 'courseone' %}">Django Course</a></li>
+
+
+      <!-- Second Method -->
+      <li><a href="{% url 'aboutus' %}">About</a></li>
+
+    </ul>
+  </nav>
+
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+<button type="button" class="btn btn-link">Link</button>
+<i class="fa-solid fa-camera fa-4x"></i>
+
+
+  {% block content %}{% endblock %}  
+  {% block content1 %}{% endblock %}  
+  {% block content2 %}{% endblock %} 
+  
+<script src="{% static 'core_site/js/jquery.js' %}"></script>
+<script src="{% static 'core_site/js/popper.js' %}"></script>
+<script src="{% static 'core_site/js/all.min.js' %}"></script>
+
+<script src="{% static 'core_site/js/bootstrap.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'core_site/parent.html' %}
+{% load static %}
+{% block corecss %}{{block.super}}  <link rel="stylesheet" href="{% static 'course/css/course.css' %}"> {% endblock %}
+
+
+<!-- Overriding parent block title -->
+{% block title %}Django{% endblock %} 
+
+<!-- Overriding parent block content -->
+{% block content %} <h2>I am New Django Course Page</h2>{% endblock %}  
